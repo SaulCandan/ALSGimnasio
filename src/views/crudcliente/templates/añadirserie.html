@@ -1,0 +1,42 @@
+{% extends "crudcliente.html" %}
+    
+{% block content %}
+
+
+    <div class="card">
+    <div class="card-header"></div>
+    <div class="card-body" id="dvForm">
+    <button  onclick="window.location='/crudcliente/'" class="btn boton-primary" >Cerrar</button>
+    <div id="dvFormAñadirSerie" class="list-group">
+        <form id="FormAñadirSerie" 
+                action="/crudcliente/añadirserie?cliente_a_cambiar={{cliente_a_cambiar}}"
+                method="POST"
+                style=""
+                >
+            
+                    <div class="list-group-item">
+                        <select name="txtejercicio">
+                            {% if ejercicios %}
+                                {% for e in ejercicios %}
+                                    <option class="form-control" value={{loop.index0}}> {{e.nombre}} </option>
+                                {% endfor %}
+                            {% endif %}
+                        </select>
+                    </div>  
+                    <div class="list-group-item">
+                        <label for="txtRepeticiones" class="form-label">Repeticiones</label>
+                        <input type="number" name="txtRepeticiones" min=1 max=100 Value=1 class="form-control"/>
+                    </div>  
+                    <div  class="list-group-item">
+                        <label for="txtFecha">Repeticiones</label>
+                        <input type="date" name="txtFecha" class="form-control"/>
+                    </div  class="list-group-item">  
+                        <input type="submit" value="Añadir Serie" class="btn btn-primary"/>
+
+                </form>
+        </div>
+    </div>
+</div>
+</div>
+    
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "crudcliente.html" %}
+    
+{% block content %}
+    
+
+    <div class="card">
+    <div class="card-header"></div>
+    <div class="card-body" id="dvForm">
+        <button  onclick="window.location='/crudcliente/'" class="btn btn-primary">Cerrar</button>
+    <div id="dvFormModificarCliente" class="list-group">
+        <form id="FormModificarCliente" 
+        action="/crudcliente/modificarcliente?dniantiguo={{objeto_cliente_a_modificar.dni}}&cliente_a_cambiar={{cliente_a_cambiar}}"
+        method="POST"
+        style=""
+        >
+            <div class="form-label">
+                <input type="text" name="txtNombre" value={{objeto_cliente_a_modificar.nombre}} />
+            </div>  
+            <div class="form-label">
+                <input type="text" name="txtDni" value={{objeto_cliente_a_modificar.dni}}  />
+            </div>
+            <div class="form-label">
+                <input type="number" name="txtEdad" value={{objeto_cliente_a_modificar.edad}} min=1 max=100  />
+            </div>
+            <div class="form-label">
+                <input type="submit" value="Modificar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
+
+        
+{% endblock %}

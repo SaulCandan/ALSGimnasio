@@ -1,0 +1,45 @@
+{% extends "crudcliente.html" %}
+
+
+{% block content %}
+
+
+<h1>Cliente:  {{ cliente_a_modificar.nombre }}</h1>
+
+<button  onclick="window.location='/crudcliente/'" class="btn btn-primary">Cerrar</button>
+
+<div class="container">
+    <table id="tablaSeries" class="table table-striped">
+        <thead >
+            <div class="row">
+                <th scope="col">Nº Serie</th>
+                <th scope="col">Ejercicio</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Repeticiones</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Eliminar</th> 
+            </div>
+        </thead>
+        <tbody id="datosSeries">
+            {% if series %}
+                
+                    {% for s in series %}
+                        <tr>
+                        <td scope="col">  {{ loop.index0 }} </td>
+                        <td scope="col">  {{ ejercicios[s.ejercicio].nombre }} </td>
+                        <td scope="col">  {{ ejercicios[s.ejercicio].descripcion }} </td>
+                        <td scope="col">  {{ s.repeticiones }}  </td>
+                        <td scope="col">  {{ s.fecha }}  </td>
+                        <td scope="col">  
+                        <button class="btn btn-secondary" onclick="window.location='/crudcliente?metodoCrud=Eliminarserie&cliente_a_cambiar={{cliente_a_cambiar}}&serie_a_cambiar={{loop.index0}}'">Eliminar</button>   
+                        </td>
+                        <tr>
+                    {% endfor %}
+                
+                
+            {% endif %}
+            
+        </tbody>
+    </table>
+</div>
+{% endblock %}

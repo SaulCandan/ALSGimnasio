@@ -1,0 +1,39 @@
+{% extends "crudcliente.html" %}
+    
+{% block content %}
+
+    <div class="card">
+    <div class="card-header"></div>
+    <div class="card-body" id="dvForm">
+        <button  onclick="window.location='/crudcliente/'" class="btn btn-primary">Cerrar</button>
+    <div id="dvFormAñadirCliente" class="list-group">
+        <form id="FormAñadirCliente"
+        action="/crudcliente/añadircliente"
+        method="POST"
+        style=""
+        >
+    
+        <div  class="list-group-item">
+                <label for="txtNombre" class="form-label">Nombre</label>
+                <input type="text" name="txtNombre" />
+            </div>  
+            <div  class="list-group-item">
+                <label for="txtDni">Dni </label>
+                <input type="text" name="txtDni" />
+            </div>  
+            <div  class="list-group-item">
+                <label for="txtEdad">Edad </label>
+                <input type="number" min=1 max=100 name="txtEdad" />
+            </div>  
+            <div>
+                <input type="submit" value="Añadir" class="btn btn-primary" />
+            </div>  
+        </form>
+    </div>    
+    </div>
+        </div>
+
+    </div>
+    
+{% endblock %}
+

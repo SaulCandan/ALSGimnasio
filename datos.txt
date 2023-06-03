@@ -1,0 +1,5 @@
+		Apellidos, nombre: Candán Vidal, Saúl
+            NIF: 7701595B
+            email: saulcandanvidal26@gmail.com
+            Proyecto: Gestion de gimnasio. Monitores se loguean y registran en la aplicacion para hacer una gestión de sus clientes (CRUD) y 		de las series que tiene que hacer cada cliente.
+            Repositorio: http://github.com/SaulCandan/ALSGimnasio
